@@ -1,0 +1,39 @@
+keyword_task:
+  description: >
+    Suggest 10 SEO-friendly blog keywords for the website agenticflow.digital
+    based on the topic: {topic}.
+    Include search intent (informational, commercial) and relative difficulty.
+  expected_output: >
+    A structured list of keywords with intent, search volume, virality and difficulty.
+  agent: keyword_agent
+
+research_task:
+  description: >
+    Research the selected keyword: {topic}.
+    Identify search intent, key subtopics, questions users ask,
+    and important factual points.
+  expected_output: >
+    Bullet-point research notes with clear structure.
+  agent: research_agent
+
+writing_task:
+  description: >
+    Write a 2000–2500 word SEO blog article for agenticflow.digital.
+    Make sure you find any interesting and relevant information given
+    the current year is {current_year}.
+    Generate a detailed blog article outline first based on the research notes.
+    Then write the full article based on the outline and research notes.
+    Include all the latest facts and future trends in a structured way. SEO optimized article. 
+
+    Rules:
+    - Output in Markdown
+    - Use one H1
+    - Use clear H2 and H3 headings
+    - Neutral, expert tone
+    - No fluff, no marketing hype
+    - Content must be original and informative
+  expected_output: >
+    A complete Markdown-formatted blog article ready to paste into Google Docs.
+  agent: writer_agent
+  output_file: output/blog_article.md
+
